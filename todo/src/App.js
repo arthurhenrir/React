@@ -1,10 +1,9 @@
 import './App.css';
 import axios from "axios";
-import api from "../api/todos";
 import React, { useState, useEffect } from 'react';
 import { BsTrash, BsBookmarkCheck, BsBookmarkCheckFill} from "react-icons/bs";
 
-const API = "https://localhost:5000";
+const API = "http://localhost:5000";
 
 function App() {
   const [title, setTitle] = useState("");
@@ -12,26 +11,14 @@ function App() {
   const [todos, setTodos] = useState ([]);
   const [loading, setLoading] = useState (false);  
 
-  const retrieveTodos = async () => {
-    const response = api.get("/todos");
-    return response.data;
-  }
-
-  useEffect(() => {
-    const getAllTodos = async () => {
-      const allTodos = await retrieveTodos();
-      if (allTodos) setTodos(allTodos);
-    };
-
-    getAllTodos();
-  })
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault(); //e previne que a pagina seja recarregada ao enviar 
-    const request = {
-      id:uuid
-    }
 
+    //const promise = await axios.get(`${API}/data/db.json`);
+
+    await axios.post(API + "/todos", {title, time})
+               .then((res) => {console.log(res)})
+               .catch((error) => {console.log(error)});
 
     setTitle("");
     setTime("");
