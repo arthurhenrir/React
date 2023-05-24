@@ -14,9 +14,14 @@ export const Button = styled.button`
     }
 `
 
-export const ContainerStyle = styled.div`
+export const Container = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: grey;
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    padding: 20px;
 `

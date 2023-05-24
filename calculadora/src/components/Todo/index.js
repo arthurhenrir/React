@@ -1,10 +1,11 @@
 import React from 'react'
+import { Container } from './style'
 
 function Todo() {
   return (
-    <div>
-      
-    </div>
+    <Container>
+      <p>dsad</p>
+    </Container>
   )
 }
 
