@@ -1,11 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import Todo from "./components/Todo";
 
 function App() {
   return (
-    <div className="calculadora">
-      
-    </div>
+    <>
+      <Navbar/>
+      <Todo/>
+    </>    
   );
 }
 

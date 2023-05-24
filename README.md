@@ -26,6 +26,7 @@ Digite no terminal o seguinte comando
 
 ```
     npm install [PluginName]
+    yarn add [PluginName]
 ```
 
 
